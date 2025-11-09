@@ -54,8 +54,8 @@ if "analysis" not in st.session_state:
     st.session_state.improved = None
 
 if st.button("Run Agent Analysis"):
-    # st.session_state.analysis = analyze_data(data_folder)
-    # st.session_state.improved = review_and_suggest_improvements(st.session_state.analysis)
+    st.session_state.analysis = analyze_data(data_folder)
+    st.session_state.improved = review_and_suggest_improvements(st.session_state.analysis)
     st.success("Analysis complete. You can now open the dashboard.")
     patch_app_file(st.session_state.improved["patch"])
 
